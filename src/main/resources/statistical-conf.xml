@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statistical>
+    <dics>
+        <views>
+            <view name="TB_DIC_SJQJ">hdfs://192.168.1.240:9000/zhgl/dic/TB_DIC_SJQJ.csv</view>
+            <view name="TB_DIC_NNQJ">hdfs://192.168.1.240:9000/zhgl/dic/TB_DIC_NNQJ.csv</view>
+            <view name="TB_DIC_DIM_DATE">hdfs://192.168.1.240:9000/zhgl/dic/TB_DIC_DIM_DATE.csv</view>
+            <view name="TB_DIC_WD_YLJGZDB">hdfs://192.168.1.240:9000/zhgl/dic/TB_DIC_WD_YLJGZDB.csv</view>
+            <view name="TB_DIC_WD_WSXZJGZDB">hdfs://192.168.1.240:9000/zhgl/dic/TB_DIC_WD_WSXZJGZDB.csv</view>
+        </views>
+    </dics>
+
+
+    <sts id="TB_YLFW_CW">
+        <views>
+            <view name="TB_ZY_RYDJMXB" prim-key="YLJGDM,RYJLID">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_ZY_RYDJMXB.csv
+            </view>
+            <view name="TB_ZY_CYDJMXB" prim-key="YLJGDM,CYJLID">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_ZY_CYDJMXB.csv
+            </view>
+            <view name="TB_BA_JBXX" prim-key="YLJGDM,JZLSH">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_BA_JBXX.csv
+            </view>
+            <view name="TB_BA_ZYRB" prim-key="YLJGDM,SJRQ,KSBM,ZFBZ">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_BA_ZYRB.csv
+            </view>
+        </views>
+        <sql>TB_YLFW_CW_D.sql</sql>
+        <sql>TB_YLFW_CW_W.sql</sql>
+        <sql>TB_YLFW_CW_M.sql</sql>
+    </sts>
+
+    <sts id="TB_YLFW_GZL">
+        <views>
+            <view name="TB_ZY_RYDJMXB" prim-key="YLJGDM,RYJLID">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_ZY_RYDJMXB.csv
+            </view>
+            <view name="TB_ZY_CYDJMXB" prim-key="YLJGDM,CYJLID">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_ZY_CYDJMXB.csv
+            </view>
+            <view name="TB_BA_JBXX" prim-key="YLJGDM,JZLSH">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_BA_JBXX.csv
+            </view>
+            <view name="TB_BA_ZYRB" prim-key="YLJGDM,SJRQ,KSBM,ZFBZ">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_BA_ZYRB.csv
+            </view>
+        </views>
+        <sql>TB_YLFW_CW_D.sql</sql>
+        <sql>TB_YLFW_CW_W.sql</sql>
+        <sql>TB_YLFW_CW_M.sql</sql>
+    </sts>
+
+    <sts id="TB_YLBZ_ZCCW">
+        <views>
+            <view name="TB_ZY_RYDJMXB" prim-key="YLJGDM,RYJLID">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_ZY_RYDJMXB.csv
+            </view>
+            <view name="TB_ZY_CYDJMXB" prim-key="YLJGDM,CYJLID">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_ZY_CYDJMXB.csv
+            </view>
+            <view name="TB_BA_JBXX" prim-key="YLJGDM,JZLSH">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_BA_JBXX.csv
+            </view>
+            <view name="TB_BA_ZYRB" prim-key="YLJGDM,SJRQ,KSBM,ZFBZ">
+                hdfs://192.168.1.240:9000/zhgl/YLFW/TB_BA_ZYRB.csv
+            </view>
+        </views>
+        <sql>TB_YLFW_CW_D.sql</sql>
+        <sql>TB_YLFW_CW_W.sql</sql>
+        <sql>TB_YLFW_CW_M.sql</sql>
+    </sts>
+</statistical>

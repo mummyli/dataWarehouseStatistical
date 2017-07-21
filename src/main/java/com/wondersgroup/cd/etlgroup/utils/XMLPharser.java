@@ -12,8 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by lsj on 2017-7-18.
@@ -56,6 +55,7 @@ public class XMLPharser {
         for(Node node : nodes){
             ViewModel vm  = new ViewModel();
             vm.setViewName(node.valueOf("@name"));
+            vm.setPrimKeys(node.valueOf("@prim-key").split(","));
             vm.setFilePath(node.getText().trim());
 
             vmList.add(vm);
@@ -82,8 +82,23 @@ public class XMLPharser {
             List<Node> sqlEle = e.selectNodes("sql");
             List<String> sqls = new LinkedList<String>();
 
-            for(Node n:sqlEle)
-                sqls.add(n.getStringValue());
+            Map<String,String> sqlMap = new TreeMap<String,String>();
+
+            for(Node n:sqlEle) {
+                sqlMap.put(n.valueOf("@order"),n.getStringValue());
+            }
+
+            for(String key : sqlMap.keySet()){
+                sqls.add(sqlMap.get(key));
+            }
+
+
+            StatisticConfModel scm = new StatisticConfModel();
+            scm.setStatisticalName(baseName);
+            scm.setViewList(vmList);
+            scm.setSqls(sqls);
+
+            scmList.add(scm);
 
         }
         return scmList;

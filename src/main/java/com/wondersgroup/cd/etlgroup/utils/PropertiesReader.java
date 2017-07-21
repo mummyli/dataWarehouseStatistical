@@ -1,7 +1,6 @@
 package com.wondersgroup.cd.etlgroup.utils;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
 /**
@@ -16,17 +15,40 @@ public class PropertiesReader {
     }
 
     public static void loads(){
-        InputStream is = PropertiesReader.class.getResourceAsStream("/common.properties");
 
+        InputStream is = PropertiesReader.class.getClassLoader().getResourceAsStream("common.properties");
 
         try{
             commonProps.load(is);
         }catch(IOException e){
             //log here
+            System.out.println(e.getMessage());
         }
     }
 
     public static String read(String key){
+        System.out.println(key+"---"+commonProps.getProperty(key));
         return commonProps.getProperty(key);
+    }
+
+    public static String readTxtContent(String path) {
+        StringBuilder sb = new StringBuilder();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(new File(path)));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+                sb.append("\n");
+            }
+
+            br.close();
+        }catch(IOException e){
+            //log here
+            e.printStackTrace();
+        }
+
+        return sb.toString();
     }
 }

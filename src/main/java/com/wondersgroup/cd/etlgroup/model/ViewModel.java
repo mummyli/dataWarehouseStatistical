@@ -5,6 +5,7 @@ package com.wondersgroup.cd.etlgroup.model;
  */
 public class ViewModel {
     private String viewName;
+    private String[] primKeys;
     private String filePath;
 
     public String getViewName() {
@@ -13,6 +14,14 @@ public class ViewModel {
 
     public void setViewName(String viewName) {
         this.viewName = viewName;
+    }
+
+    public String[] getPrimKeys() {
+        return primKeys;
+    }
+
+    public void setPrimKeys(String[] primKeys) {
+        this.primKeys = primKeys;
     }
 
     public String getFilePath() {
